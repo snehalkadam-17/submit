@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <style>
+        .table
+        {
+            border: 1px solid black;
+            background-color: cadetblue;
+        }
+        tr,th
+        {
+                      border: 1px solid black;  
+        }
+        </style>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Birthday</th>
+            </tr>
+        </table>
+        <tbody id="myTable">
+
+            </tbody>
+            <script>
+var myArray = [
+    {'name':'Snehal','age':'25','birthday':'17-10-1998'},
+     {'name':'Pranali','age':'21','birthday':'1-4-2002'},
+      {'name':'Sneha','age':'23','birthday':'31-1-2000'},
+       {'name':'Anjali','age':'25','birthday':'17-11-1998'},
+]
+buildTable(myArray)
+
+function buildTable(data)
+{
+    var table= document.getElementById('myTable')
+
+    for(var i=0; i< data.length; i++)
+    {
+        var row= `<tr>
+        <td>${data[i].name}</td>
+        <td>${data[i].age}</td>
+        <td>${data[i].birthday}</td>
+        <tr>`
+        table.innerHTML += row ;
+    }
+}
+ </script>
+</body>
+</html>
